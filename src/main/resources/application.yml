@@ -1,0 +1,28 @@
+#如果要使yml配置生效，必须使properties的同样配置信息注释掉，因为properties优先级更高
+#用三根横线分成各个板块
+server:
+  port: 8081
+
+#spring:
+#  profiles:
+#    active: dev
+#这三行是想激活并跳转到另外一个配置块
+
+#--spring.profiles.active=prod
+#还可以用命令行配置激活profile参数
+
+#-Dspring.profiles.active=prod
+#这是使用虚拟机参数激活板块
+---
+server:
+  port: 8083
+spring:
+  profiles: dev
+---
+server:
+  port: 8084
+spring:
+  profiles: prod
+#person:
+#  age: 18
+#  name: 陈杰灿
